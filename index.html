@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Basics Documentation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Git Basics</header>
+      <a class="nav-link" href="#Introduction">Introduction</a>
+      <a class="nav-link" href="#Installation">Installation</a>
+      <a class="nav-link" href="#Creating_a_Repository">Creating a Repository</a>
+      <a class="nav-link" href="#Making_Commits">Making Commits</a>
+      <a class="nav-link" href="#Branching_and_Merging">Branching and Merging</a>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p>
+          Git is a distributed version control system. It records changes to
+          your files over time so you can recall specific versions later.
+        </p>
+        <p>
+          Every copy of a project contains its full history, which means you
+          can work offline and still commit, compare and review changes.
+        </p>
+        <p>This guide covers the commands you need for everyday work:</p>
+        <ul>
+          <li>Installing Git on your computer</li>
+          <li>Creating a repository</li>
+          <li>Saving snapshots with commits</li>
+          <li>Working in parallel with branches</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Installation">
+        <header>Installation</header>
+        <p>
+          Most systems can install Git through a package manager. On Debian
+          and Ubuntu, run the following command in a terminal:
+        </p>
+        <pre><code>sudo apt install git</code></pre>
+        <p>
+          After the install finishes, confirm it worked by checking the
+          version with <code>git --version</code>.
+        </p>
+      </section>
+
+      <section class="main-section" id="Creating_a_Repository">
+        <header>Creating a Repository</header>
+        <p>
+          A repository is a folder that Git tracks. Move into your project
+          folder and initialize it:
+        </p>
+        <pre><code>git init</code></pre>
+        <p>
+          To copy an existing project instead, use
+          <code>git clone</code> followed by the repository address.
+        </p>
+        <p>Useful things to know right after creating a repository:</p>
+        <ul>
+          <li>A hidden <code>.git</code> folder stores the history</li>
+          <li>Deleting that folder removes all version tracking</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Making_Commits">
+        <header>Making Commits</header>
+        <p>
+          A commit is a saved snapshot of your project. First choose which
+          changes to include by staging them:
+        </p>
+        <pre><code>git add index.html</code></pre>
+        <p>Then record the snapshot together with a short message:</p>
+        <pre><code>git commit -m "Add home page"</code></pre>
+        <p>
+          Run <code>git status</code> at any time to see which files are
+          modified, staged or untracked.
+        </p>
+      </section>
+
+      <section class="main-section" id="Branching_and_Merging">
+        <header>Branching and Merging</header>
+        <p>
+          Branches let you develop a feature without touching the main line
+          of work. Create and switch to a new branch in one step:
+        </p>
+        <pre><code>git switch -c new-feature</code></pre>
+        <p>When the feature is ready, return to the main branch and merge:</p>
+        <pre><code>git merge new-feature</code></pre>
+        <p>A healthy branching habit looks like this:</p>
+        <ul>
+          <li>Keep each branch focused on one task</li>
+          <li>Commit small and often</li>
+          <li>Delete branches once they are merged</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
